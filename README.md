@@ -4,7 +4,7 @@
 ![windjammer header](Visuals/shopify_id_resolution.png)
 
 ## Overview
-This project uses the Recordlinkage Python package to address the challenge of customer identification. I use a processing of potential pair matching and similarity scoring to identify true customer pairs resulting in truly unique customer file. My identity resolution methods found 238 duplicate customers resulting in a 5% reduction in the size of customer file. I achieved a 99% F1 score.
+This project uses the Recordlinkage Python package to address the challenge of customer identification. I use a processing of potential pair matching and similarity scoring to identify true customer pairs resulting in truly unique customer file. My identity resolution methods found 238 duplicate customers resulting in a 5% reduction in the size of customer file. I achieved a 99% F1 score for this classification problem.
 
 ## Business Problem
 Many Shopify merchants have use customer file that doesn't accurately reflect their truly unique customers because customers will often be classified as seperate when they are in fact the same customer entering different information. Some misidentifications are accidential resulting from misspellings while others intentionally use different email addresses to access discounts and gated services. This causes business problems for merchants because their customer analytics and marketing personalization are only as good as their customer identity resolution. If you don't know who is who, you can't properly assess key customer metrics like customer lifetime value, customer acquisition cost, churn, etc.
@@ -21,7 +21,9 @@ At this point I brought in some domain knowledge to be more intelligent about bl
 The process of identified potential pairs using the more discriminating sorted neighborhood process involves three steps
 
 1.Taking the blocking series for each data frame (in our case "first name") and combining them into one series
+
 2.Sorting the series
+
 3.For each element in the series, the function looks within the specified window. 
 
 If two elements from different series are within the window, they are added to the list of potential pairs.
