@@ -1,7 +1,7 @@
 # Windjammer Consulting: Shopify Customer Identity Resolution
 **Author**: [Alex FitzGerald](https://www.linkedin.com/in/alex-fitzgerald-0734076a/)
 
-![windjammer header](visuals/shopify_id_resolution.pngshopify_id_resolution.png)
+![windjammer header](Visuals/shopify_id_resolution.png)
 
 ## Overview
 This project uses the Recordlinkage Python package to address the challenge of customer identification. I use a processing of potential pair matching and similarity scoring to identify true customer pairs resulting in truly unique customer file. My identity resolution methods resulted in a 
