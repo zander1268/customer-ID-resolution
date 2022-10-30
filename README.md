@@ -34,16 +34,20 @@ The first step in the process is to generate a new dataframe where the multi-ind
 
 ### Blocking
 We can be smarter about our pairing by eliminating pairs that couldn't possibly be from the same individual. Using a technique called blocking we can tell the indexer object to only create pairs that match some criteria. I chose “first name” but you could also choose another feature.
-![blocking window](Visuals/blocking_window.png)
 
 At this point I brought in some domain knowledge to be more intelligent about blocking. It's very common for customers to misspell their name or provide a nickname on some purchases and a full name on others. To better link these instances of similar names we can use a sorted neighbors algorithm to group names to then be used for blocking.
 
 The process of identified potential pairs using the more discriminating sorted neighborhood process involves three steps
 
-* Taking the blocking series for each data frame (in our case "first name") and combining them into one series
-* Sorting the series
-* For each element in the series, the function looks within the specified window 
-* If two elements from different series are within the window, they are added to the list of potential pairs.
+1. Taking the blocking series for each data frame (in our case "first name") and combining them into one series
+
+2. Sorting the series
+
+3. For each element in the series, the function looks within the specified window 
+
+4. If two elements from different series are within the window, they are added to the list of potential pairs.
+
+![blocking window](Visuals/blocking_window.png)
 
 ### Comparing
 The compare class and compute methods taken together give you the power to compare your potential links across the dimensions in your data. The process goes like this...
