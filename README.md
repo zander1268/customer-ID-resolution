@@ -70,13 +70,13 @@ String = Compare string features using one of several possible algorithms
 Next, I summed the similarity score horizontally accross all features for each potential pair. Potential pairs with a score of 4 or greater were considered matches, those with a score lower than 4 were considered different customers.
 ![similarity sum](Visuals/similarity_sum.png)
 
-##Results
+## Results
 We reduced the size of our customer file by 238 duplicate customer entries. This was an overall reduction of  5% from the original full length file. Using a combination of sorted neighborhood blocking, similarity ranking algorithms, and similarity score threshold of 4, I was able to achieve a 99% F1 score. I successfully identified 99% of the duplicate customer IDs. Of the IDs that my algorithm identified as matches, 100% were actual matches.
 
 ![results](Visuals/results.png)
 ![ROC](Visuals/p&r_roc_curve.png)
 
-##Conclusion
+## Conclusion
 This project demonstrates the power of the Record Linkage package for resolving Shopify customer identity issues that are very common for merchants. Improper customer identification is a major issue because it limits the accuracy of customer analysis and weakens the effectiveness of marketing personalization. Merchants can follow the steps laid out in these projects, tailoring important elements like feature selection and thresholds to their needs to get a more accurate picture of the truly unique customers in their file.
 
 
