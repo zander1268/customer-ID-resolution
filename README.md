@@ -77,7 +77,7 @@ We reduced the size of our customer file by 238 duplicate customer entries. This
 ![ROC](Visuals/p&r_roc_curve.png)
 
 ## Conclusion
-This project demonstrates the power of the Record Linkage package for resolving Shopify customer identity issues that are very common for merchants. Improper customer identification is a major issue because it limits the accuracy of customer analysis and weakens the effectiveness of marketing personalization. Merchants can follow the steps laid out in these projects, tailoring important elements like feature selection and thresholds to their needs to get a more accurate picture of the truly unique customers in their file.
+This project demonstrates the power of the Record Linkage package for resolving Shopify customer identity issues that are very common for merchants. Improper customer identification is a major issue because it limits the accuracy of customer analysis and weakens the effectiveness of marketing personalization. Merchants can follow the steps laid out in this project, tailoring important elements like feature selection and thresholds to their needs to get a more accurate picture of the truly unique customers in their file.
 
 
 ## Reproduction Instructions
