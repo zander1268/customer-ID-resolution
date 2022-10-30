@@ -10,7 +10,7 @@ This project uses the Record Linkage Python package to address the challenge of 
 Many Shopify merchants have a customer file that doesn't accurately reflect their truly unique customers because customers will often be classified as separate when they are in fact the same customer entering different information. Some misidentifications are accidental resulting from misspellings while others intentionally use different email addresses to access discounts and gated services. This causes business problems for merchants because their customer analytics and marketing personalization are only as good as their customer identity resolution. If you don't know who is who, you can't properly assess key customer metrics like customer lifetime value, customer acquisition cost, churn, etc.
 
 ## Data
-The data used was provided by Record Linkage for practice purposes which I then manipulated to reflect the Shopify customer data structure. The data included 5,250 customer records with 5,000 truly unique customers as indicated by the Shopify ID which I used as the ground truth. Features used in the similarity algorithms included; 
+The [data](./Data/processed_data.csv) used was provided by Record Linkage for practice purposes which I then manipulated to reflect the Shopify customer data structure. The data included 5,250 customer records with 5,000 truly unique customers as indicated by the Shopify ID which I used as the ground truth. Features used in the similarity algorithms included; 
 * "First_Name"
 * "Last_Name"
 * "Date_of_Birth"
@@ -20,7 +20,18 @@ The data used was provided by Record Linkage for practice purposes which I then 
 
 
 ## Methods
-The first step in the process is to generate a new dataframe where the multi-index represents all possible pairs of the original dataframes. We can be smarter about our pairing by eliminating pairs that couldn't possibly be from the same individual. Using a technique called blocking we can tell the indexer object to only create pairs that match some criteria. I chose “first name” but you could also choose another feature. 
+The process I took was uniquely tailored to this data set but the process can be replicated for any Shopify customer file. To replicate these steps, merchants need to consider the following variables and customize them to achieve the best F1 score.
+
+*Blocking feature
+*Comparision algorythms
+*Comparision threshholds
+*Similarity score threshhold
+
+The first step in the process is to generate a new dataframe where the multi-index represents all possible pairs of the original dataframes. This simple approach assumes that any customer ID could be a match with all other IDs.
+![potential pairs](Visuals/potential_pairs.png)
+
+We can be smarter about our pairing by eliminating pairs that couldn't possibly be from the same individual. Using a technique called blocking we can tell the indexer object to only create pairs that match some criteria. I chose “first name” but you could also choose another feature.
+![potential pairs](Visuals/potential_pairs.png)
 
 At this point I brought in some domain knowledge to be more intelligent about blocking. It's very common for customers to misspell their name or provide a nickname on some purchases and a full name on others. To better link these instances of similar names we can use a sorted neighbors algorithm to group names to then be used for blocking.
 
