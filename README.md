@@ -10,7 +10,13 @@ This project uses the Record Linkage Python package to address the challenge of 
 Many Shopify merchants have a customer file that doesn't accurately reflect their truly unique customers because customers will often be classified as separate when they are in fact the same customer entering different information. Some misidentifications are accidental resulting from misspellings while others intentionally use different email addresses to access discounts and gated services. This causes business problems for merchants because their customer analytics and marketing personalization are only as good as their customer identity resolution. If you don't know who is who, you can't properly assess key customer metrics like customer lifetime value, customer acquisition cost, churn, etc.
 
 ## Data
-The data used was provided by Record Linkage for practice purposes which I then manipulated to reflect the Shopify customer data structure. The data included 5,250 customer records with 5,000 truly unique customers as indicated by the Shopify ID which I used as the ground truth. Features used in the similarity algorithms included; "First_Name","Last_Name","Date_of_Birth","city","State",and "Address_1".
+The data used was provided by Record Linkage for practice purposes which I then manipulated to reflect the Shopify customer data structure. The data included 5,250 customer records with 5,000 truly unique customers as indicated by the Shopify ID which I used as the ground truth. Features used in the similarity algorithms included; 
+* "First_Name"
+* "Last_Name"
+* "Date_of_Birth"
+* "city"
+* "State"
+* "Address_1".
 
 
 ## Methods
