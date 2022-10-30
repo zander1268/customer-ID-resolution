@@ -4,7 +4,7 @@
 ![windjammer header](Visuals/shopify_id_resolution.png)
 
 ## Overview
-This project uses the [Record Linkage](https://recordlinkage.readthedocs.io/en/latest/index.html) Python package to address the challenge of customer identification. I use a processing of potential pair matching and similarity scoring to identify true customer pairs resulting in truly unique customer file. My identity resolution methods found 238 duplicate customers resulting in a 5% reduction in the size of the customer file. I achieved a 99% F1 score for this classification problem.
+This project uses the [Record Linkage](https://recordlinkage.readthedocs.io/en/latest/index.html) Python package to address the challenge of customer identification. I use a processes of potential pair matching and similarity scoring to identify true customer pairs resulting in a truly unique customer file. My identity resolution methods found 238 duplicate customers resulting in a 5% reduction in the size of the customer file. I achieved a 99% F1 score for this classification problem.
 
 ## Business Problem
 Many Shopify merchants have a customer file that doesn't accurately reflect their truly unique customers because customers will often be classified as separate when they are in fact the same customer entering different information. Some misidentifications are accidental resulting from misspellings while others intentionally use different email addresses to access discounts and gated services. This causes business problems for merchants because their customer analytics and marketing personalization are only as good as their customer identity resolution. If you don't know who is who, you can't properly assess key customer metrics like customer lifetime value, customer acquisition cost, churn, etc.
