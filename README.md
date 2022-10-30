@@ -23,13 +23,16 @@ The [data](./Data/processed_data.csv) used was provided by Record Linkage for pr
 The process I took was uniquely tailored to this data set but the process can be replicated for any Shopify customer file. To replicate these steps, merchants need to consider the following variables and customize them to achieve the best F1 score.
 
 * Blocking feature
-* Comparision algorythms
-* Comparision threshholds
+* Blocking window
+* Comparison algorythms
+* Comparison threshholds
 * Similarity score threshhold
 
+### Indexing
 The first step in the process is to generate a new dataframe where the multi-index represents all possible pairs of the original dataframes. This simple approach assumes that any customer ID could be a match with all other IDs.
 ![potential pairs](Visuals/potential_pairs.png)
 
+### Blocking
 We can be smarter about our pairing by eliminating pairs that couldn't possibly be from the same individual. Using a technique called blocking we can tell the indexer object to only create pairs that match some criteria. I chose “first name” but you could also choose another feature.
 ![blocking window](Visuals/blocking_window.png)
 
@@ -42,6 +45,7 @@ The process of identified potential pairs using the more discriminating sorted n
 * For each element in the series, the function looks within the specified window 
 * If two elements from different series are within the window, they are added to the list of potential pairs.
 
+### Comparing
 The compare class and compute methods taken together give you the power to compare your potential links across the dimensions in your data. The process goes like this...
 
 1. Initialize the the Compare class
@@ -58,6 +62,7 @@ String = Compare string features using one of several possible algorithms
 * The jarowinkler formula compares two strings and assigns a similarity score between 0 and 1 with more similar strings closer to 1. The formula values strings that match from the beginning. If the jarowinkler value is above the threshold, the features will be given a score of 1.
 * Without specifying a formula, the strings will be evaluated on the number of matching characters, if the ratio of matching characters to total characters is above the threshold, the features will be given a score of 1.
 
+### Scoring
 Next, I summed the similarity score horizontally accross all features for each potential pair. Potential pairs with a score of 4 or greater were considered matches, those with a score lower than 4 were considered different customers.
 ![similarity sum](Visuals/similarity_sum.png)
 
